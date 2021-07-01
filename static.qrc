@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file>static/themes/default/style/style.qss</file>
+        <file>static/themes/default/img/sidebar-icons/dash.png</file>
+        <file>static/themes/default/img/sidebar-icons/antivirus.png</file>
+        <file>static/themes/default/img/sidebar-icons/network.png</file>
+        <file>static/themes/default/img/search.png</file>
+        <file>static/themes/default/img/browse.png</file>
+        <file>static/themes/default/img/virusScan.png</file>
+        <file>static/themes/default/img/startVirusScan.png</file>
+        <file>static/themes/default/img/stopVirusScan.png</file>
+        <file>static/themes/default/img/checksum.png</file>
+        <file>static/themes/default/img/startChecksum.png</file>
+        <file>static/themes/default/img/failed.png</file>
+        <file>static/themes/default/img/checkbox.png</file>
+        <file>static/themes/default/img/un-checkbox.png</file>
+        <file>static/themes/default/img/check.png</file>
+        <file>static/themes/default/img/un-check.png</file>
+        <file>static/themes/default/img/speedtest.png</file>
+        <file>static/themes/default/img/startSpeedtest.png</file>
+        <file>static/themes/default/style/values.ini</file>
+    </qresource>
+</RCC>
