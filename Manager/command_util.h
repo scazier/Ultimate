@@ -8,6 +8,7 @@
 #include <QObject>
 #include <QDebug>
 #include <QPushButton>
+#include <QListWidgetItem>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 
@@ -17,7 +18,7 @@ class CommandUtil : public QObject
 {
     Q_OBJECT
 public:
-    static QProcess * clamScan(const QString &cmd, QStringList args, QTextEdit *lblOutput = nullptr,  QPushButton *btnScan = nullptr);
+    static QProcess * clamScan(const QString &cmd, QStringList args, QListWidget *lblOutput = nullptr, QTextEdit *summaryScan = nullptr,  QPushButton *btnScan = nullptr);
     static QString exec(const QString &cmd, QStringList args = QStringList(), QByteArray data = QByteArray());
     static QString fileSize(float size);
     //static void downloadTest(QNetworkAccessManager *manager, QNetworkRequest request, SpeedtestSubPage ins);

@@ -64,5 +64,5 @@ void CheckSumSubPage::on_btnCheck_clicked()
     }
 
     //Check for any virus in the file
-    QProcess *_p = CommandUtil::clamScan("clamscan",{"--bell", ui->filePath->text()}, ui->fileData);
+    QProcess *_p = CommandUtil::clamScan("clamscan",{"--bell", ui->filePath->text()});
 }

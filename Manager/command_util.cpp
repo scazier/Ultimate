@@ -27,14 +27,27 @@ QString CommandUtil::exec(const QString &cmd, QStringList args, QByteArray data)
     return stdOut.readAll().trimmed();
 }
 
-QProcess * CommandUtil::clamScan(const QString &cmd, QStringList args, QTextEdit *lblOutput, QPushButton *btnScan)
+QProcess * CommandUtil::clamScan(const QString &cmd, QStringList args, QListWidget *lblOutput, QTextEdit *summaryScan, QPushButton *btnScan)
 {
     auto process = new QProcess;
-    lblOutput->append("======== STARTING SCAN OF : " + args[args.length()-1] + " ========\n");
-    connect(process, &QProcess::readyReadStandardOutput, [process,lblOutput](){
+    connect(process, &QProcess::readyReadStandardOutput, [process,lblOutput,summaryScan](){
         QTextStream stdOut(process->readAllStandardOutput());
-        auto output = stdOut.readAll().trimmed();
-        lblOutput->append(output);
+
+        int isSummary = 0;
+        for (auto &file : stdOut.readAll().trimmed().split('\n')){
+            if (isSummary){
+                summaryScan->append(file);
+            }
+            else{
+                if (!file.compare("----------- SCAN SUMMARY -----------")){
+                    isSummary = 1;
+                }
+                else{
+                    QListWidgetItem *item = new QListWidgetItem(file);
+                    lblOutput->addItem(item);
+                }
+            }
+        }
     });
 
     if (btnScan != nullptr){
