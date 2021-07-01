@@ -1,0 +1,181 @@
+/****** DEFAULT THEME ******/
+
+#btnBrowse{
+  border: 0;
+  background: url(:/static/themes/default/img/browse.png) no-repeat center;
+}
+
+/**************
+    Sidebar
+***************/
+
+#sidebar {
+    background-color: @sidebar;
+    min-width: 60;
+}
+
+#sidebar QPushButton {
+    border: 0px;
+    height: 42;
+    border-style: solid;
+    color: @color07;
+    margin: 0 0;
+    border-radius: 0;
+}
+
+#sidebar QPushButton:checked,
+#sidebar QPushButton:hover {
+    background-color: @color03;
+}
+
+#pageTitle {
+    color: @color04;
+    padding: 5 0 8 0;
+    margin: 5 10;
+    border: 0;
+    border-bottom: 1 solid @color04;
+}
+
+#pageContent {
+    background-color: @color08;
+}
+
+#btnAntivirus {
+    qproperty-icon: url(:/static/themes/default/img/sidebar-icons/antivirus.png);
+}
+
+#btnNetwork {
+    qproperty-icon: url(:/static/themes/default/img/sidebar-icons/network.png);
+}
+
+/**************
+    QCheckBox
+***************/
+
+QCheckBox::indicator {
+    width: 44px;
+    height: 24px;
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/static/themes/default/img/checkbox.png);
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/static/themes/default/img/un-checkbox.png);
+}
+
+QCheckBox[accessibleName="circle"] {
+    font-size: 10pt;
+    color: @color06;
+}
+
+QCheckBox[accessibleName="circle"]::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QCheckBox[accessibleName="circle"]::indicator:unchecked {
+    image: url(:/static/themes/default/img/un-check.png);
+}
+
+QCheckBox[accessibleName="circle"]::indicator:checked {
+    image: url(:/static/themes/default/img/check.png);
+}
+
+/**************
+  AntivirusPage
+***************/
+
+#subPageButtons QPushButton {
+  color: @color07;
+  background-color: @sidebar;
+  border-radius: 15px;
+}
+
+#subPageButtons QPushButton:checked,
+#subPageButtons QPushButton:hover {
+  color: @sidebar;
+  background-color: @color07;
+}
+
+
+/**************
+  ScanSubPage
+***************/
+
+#ScanSubPage {
+  background-color: @color01;
+}
+/*
+#fileWidget QPushButton{
+  border-radius: 6;
+  background-color: @color05;
+}*/
+
+#ScanSubPage QTextEdit, QLineEdit{
+  border-radius: 6;
+  background-color: @color01;
+  padding: 4px;
+}
+
+#ScanSubPage #btnVirusScan{
+  border: 0;
+  background: url(:/static/themes/default/img/virusScan.png) no-repeat center;
+}
+
+#ScanSubPage #btnVirusScan:hover{
+  background: url(:/static/themes/default/img/startVirusScan.png) no-repeat center;
+}
+
+/******************
+  CheckSumSubPage
+******************/
+
+#CheckSumSubPage #fileData{
+  border-radius: 6;
+  background-color: @color01;
+  padding: 4px;
+}
+
+#CheckSumSubPage #btnCheck{
+  border:0;
+  background: url(:/static/themes/default/img/checksum.png) no-repeat center;
+}
+
+#CheckSumSubPage #btnCheck:hover{
+  background: url(:/static/themes/default/img/startChecksum.png) no-repeat center;
+}
+
+/**************
+  NetworkPage
+**************/
+
+#lblCircleChartTitle,
+#lblCircleChartValue {
+    color: @color05;
+    font-size: 13pt;
+    margin: 0;
+}
+
+
+/******************
+  SpeedtestsubPage
+*******************/
+
+#btnSpeedTest{
+  border: 0;
+  background: url(:/static/themes/default/img/speedtest.png) no-repeat center;
+}
+
+#btnSpeedTest:hover{
+  border: 0;
+  background: url(:/static/themes/default/img/startSpeedtest.png) no-repeat center;
+}
+
+/* - Circle Bar - */
+
+#widgetCircleBar, #widgetPlot {
+    background-color: @color01;
+    border-radius: 1;
+}
