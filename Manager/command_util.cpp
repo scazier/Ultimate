@@ -1,5 +1,20 @@
 #include "command_util.h"
 
+QString CommandUtil::sudoExec(const QString &cmd, QStringList args, QByteArray data)
+{
+    args.push_front(cmd);
+
+    QString result("");
+
+    try {
+        result = CommandUtil::exec("pkexec", args, data);
+    } catch (QString &ex) {
+        qCritical() << ex;
+    }
+
+    return result;
+}
+
 QString CommandUtil::exec(const QString &cmd, QStringList args, QByteArray data)
 {
     std::unique_ptr<QProcess> process(new QProcess());
@@ -44,6 +59,12 @@ QProcess * CommandUtil::clamScan(const QString &cmd, QStringList args, QListWidg
                 }
                 else{
                     QListWidgetItem *item = new QListWidgetItem(file);
+                    if (file.contains("FOUND")){
+                        item->setForeground(Qt::red);
+                    }
+                    else{
+                        item->setForeground(Qt::green);
+                    }
                     lblOutput->addItem(item);
                 }
             }

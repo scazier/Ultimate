@@ -5,6 +5,8 @@
 #include <QProcess>
 #include <QCheckBox>
 #include <QFileDialog>
+#include <QPainter>
+#include <QSequentialAnimationGroup>
 
 namespace Ui{
     class ScanSubPage;
@@ -29,6 +31,8 @@ private:
 
     QFileDialog *dialog;
     QProcess *clamScanProc;
+    QSequentialAnimationGroup *animation;
+    QPainter *scanLine;
 };
 
 #endif // SCANSUBPAGE_H

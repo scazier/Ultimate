@@ -16,7 +16,7 @@ SpeedtestSubPage::~SpeedtestSubPage()
 SpeedtestSubPage::SpeedtestSubPage(QWidget *parent):
     QWidget(parent),
     ui(new Ui::SpeedtestSubPage),
-    dLoadBar(new CircleBar(tr("Download"), {"#FFB75E", "#ED8F03"}, this)),
+    dLoadBar(new CircleBar(tr("Download"), {"#FFFFFF", "#FFB75E", "#ED8F03"}, this)),
     uLoadBar(new CircleBar(tr("Upload"), {"#DC2430", "#7B4397"}, this))
 {
     ui->setupUi(this);
@@ -83,6 +83,7 @@ void SpeedtestSubPage::updateDownloadBar(qint64 bytesRead, qint64 bytesTotal)
     else{
         delete manager;
         axisX.clear();
+        axisX.append(0);
         uploadTest();
         return;
     }

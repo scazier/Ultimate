@@ -40,7 +40,7 @@ void CircleBar::init()
     QConicalGradient gradient;
     gradient.setAngle(185);
     for (int i = 0; i < mColors.count(); ++i) {
-        gradient.setColorAt(i, QColor(mColors.at(i)));
+        gradient.setColorAt(i/((float)mColors.count()-1), QColor(mColors.at(i)));
     }
     mSeries->slices().first()->setBrush(gradient);
 

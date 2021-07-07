@@ -120,7 +120,6 @@ QCheckBox[accessibleName="circle"]::indicator:checked {
 }
 
 #ScanSubPage QListWidget::item{
-  color: #00e866;
   background: @color01;
   border: none;
   padding: 2;

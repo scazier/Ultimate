@@ -21,8 +21,8 @@ ScanSubPage::ScanSubPage(QWidget *parent) :
 void ScanSubPage::init()
 {
     ui->filePath->setText("/");
-
 }
+
 
 void ScanSubPage::on_btnVirusScan_clicked()
 {
@@ -44,6 +44,7 @@ void ScanSubPage::on_btnVirusScan_clicked()
 
         qDebug() << "[INFO]: Start scan";
         ui->lblOutputCommand->clear();
+        ui->lblSummaryCommand->clear();
         clamScanProc = CommandUtil::clamScan("clamscan", args, ui->lblOutputCommand, ui->lblSummaryCommand, ui->btnVirusScan);
         ui->btnVirusScan->setStyleSheet("background: url(:/static/themes/default/img/stopVirusScan.png) no-repeat center;");
         ui->btnVirusScan->setToolTip("Stop scan");
